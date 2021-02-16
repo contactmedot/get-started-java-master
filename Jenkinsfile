@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven "Maven"
+    }
     environment {
                     HELM_EXPERIMENTAL_OCI=1
                     KUBECONFIG = 'C:/Users/shivam/.kube/config'
@@ -13,7 +16,7 @@ pipeline {
                             echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                             echo "${env.JENKINS_HOME}"
                             echo "${env.WORKSPACE}"
-                            sh 'mvn -B -DskipTests clean package' 
+                             sh 'mvn clean package'
                             echo '************************************************************************'        
                             echo '************************************************************************'     
                             echo 'Building..'
