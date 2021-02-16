@@ -9,6 +9,7 @@ EXPOSE 9080
 # docker build -t getstartedjava:latest .
 # docker run -d --name myjavacontainer getstartedjava
 # docker run -p 9080:9080 --name myjavacontainer getstartedjava
+# here instead of9080 in start you can cehck with different port
 # Visit http://localhost:9080/GetStartedJava/
 
 ## Push container to IBM Cloud
