@@ -16,7 +16,7 @@ pipeline {
                             echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                             echo "${env.JENKINS_HOME}"
                             echo "${env.WORKSPACE}"
-                             sh 'mvn clean package'
+                             bat 'mvn clean install'
                             echo '************************************************************************'        
                             echo '************************************************************************'     
                             echo 'Building..'
