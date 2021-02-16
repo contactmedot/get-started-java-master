@@ -22,5 +22,21 @@ pipeline {
                             echo 'Building..'
             }
         }
+        stage('Create Docker Image Registry') {
+            steps{
+             
+              script{
+                  
+                    // docker.withRegistry("https://myacrtemp.azurecr.io", 'acr_id') {
+                    //     def testImage = docker.build("javaimagewithoutwebsphere:${env.BUILD_ID}", './')
+                    //     testImage.push()
+                        docker.withRegistry("https://registry.hub.docker.com",'docker_id') {
+                        def testImage = docker.build("dockershivam2020/myjavaapp:${env.BUILD_ID}", './')
+                        testImage.push()
+                    }
+                }
+              
+            }
+         }
     }
 }
