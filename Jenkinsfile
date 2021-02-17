@@ -37,13 +37,13 @@ pipeline {
                 }
             }
          }
-    }
-    stage('Deploy- using Helm') {
-                
+         stage('Deploy- using Helm') {  
             steps{         
             powershell('helm package ./javaapp')
              powershell('helm install newjavaapp javaapp-0.1.0.tgz')       
                           
             }
          }
+    }
+    
 }
