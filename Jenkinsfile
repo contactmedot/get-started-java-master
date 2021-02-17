@@ -40,7 +40,7 @@ pipeline {
          stage('Deploy- using Helm') {  
             steps{         
             powershell('helm package ./javaapp')
-             powershell('helm install javaappv4 javaapp-0.1.0.tgz')       
+             powershell('helm install javaappv3 javaapp-0.1.0.tgz')       
                           
             }
          }
